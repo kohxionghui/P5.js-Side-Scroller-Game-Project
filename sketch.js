@@ -63,6 +63,8 @@ let movingSoundPlayed = false;
 function preload() {
 	soundFormats("mp3", "wav");
 
+	outputVolume(1);
+
 	jumpSound = loadSound(
 		"assets/[Jump] mixkit-boing-hit-sound-2894.wav",
 		soundFilesLoaded,
