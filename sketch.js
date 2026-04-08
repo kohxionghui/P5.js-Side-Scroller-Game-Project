@@ -63,49 +63,47 @@ let movingSoundPlayed = false;
 function preload() {
 	soundFormats("mp3", "wav");
 
-	outputVolume(1);
-
 	jumpSound = loadSound(
 		"assets/[Jump] mixkit-boing-hit-sound-2894.wav",
 		soundFilesLoaded,
 	);
-	jumpSound.setVolume(0.01);
+	jumpSound.setVolume(0.1);
 
 	walkSound = loadSound(
 		"assets/[Walking] mixkit-footsteps-in-the-forest-ground-1230.mp3",
 		soundFilesLoaded,
 	);
-	walkSound.setVolume(0.1);
+	walkSound.setVolume(1.0);
 
 	collectSound = loadSound(
 		"assets/[Collectable] mixkit-melodic-bonus-collect-1938.wav",
 		soundFilesLoaded,
 	);
-	collectSound.setVolume(0.03);
+	collectSound.setVolume(0.3);
 
 	winSound = loadSound(
 		"assets/[Win] mixkit-game-level-completed-2059.wav",
 		soundFilesLoaded,
 	);
-	winSound.setVolume(0.05);
+	winSound.setVolume(0.5);
 
 	loseSound = loadSound(
 		"assets/[Lose] mixkit-negative-answer-lose-2032.wav",
 		soundFilesLoaded,
 	);
-	loseSound.setVolume(0.1);
+	loseSound.setVolume(1.0);
 
 	dyingSound = loadSound(
 		"assets/[Dying] mixkit-negative-guitar-tone-2324.wav",
 		soundFilesLoaded,
 	);
-	dyingSound.setVolume(0.1);
+	dyingSound.setVolume(1.0);
 
 	backgroundMusic = loadSound(
 		"assets/[Background music] Slow Piano Background Music No Copyrights - Millennials Melody Originals.mp3",
 		soundFilesLoaded,
 	);
-	backgroundMusic.setVolume(0.1);
+	backgroundMusic.setVolume(1.0);
 }
 
 function soundFilesLoaded() {
@@ -120,6 +118,7 @@ function setup() {
 	createCanvas(1024, 576);
 	rectMode(CENTER);
 	angleMode(DEGREES);
+	masterVolume(1.0);
 
 	character = new Character(gameChar_x, gameChar_y, gameChar_alpha);
 
